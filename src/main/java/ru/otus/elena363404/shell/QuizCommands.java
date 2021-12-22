@@ -3,7 +3,6 @@ package ru.otus.elena363404.shell;
 import lombok.RequiredArgsConstructor;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
-import org.springframework.shell.standard.ShellMethodAvailability;
 import ru.otus.elena363404.config.LangConfig;
 import ru.otus.elena363404.service.QuestionService;
 
@@ -16,7 +15,6 @@ public class QuizCommands {
   private final LangConfig config;
 
   @ShellMethod(value = "test-student", key = {"t", "tes", "test"})
-  @ShellMethodAvailability(value = "isTestStudentAvailable")
   public String testStudent() {
     questionService.testStudent();
     return "Тестирование завершено";
